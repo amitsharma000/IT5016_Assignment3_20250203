@@ -3,15 +3,6 @@
 ## Project Title
 **Ferry- The Requisition System Project**
 
-## Course Information
-- **Student Name**: Amit  
-- **Student ID**: 20250203  
-- **Course**: IT5016 - Software Research and Practice
-
-## GitHub Repository
-[GitHub Link](https://github.com/amitsharma000/IT5016_Assignment3_20250203)
-
-
 ## Project Overview
 
 This Python application serves as a simple data collection system for staff entries along with purchase-request administration based on total monetary value.
