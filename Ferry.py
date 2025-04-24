@@ -1,13 +1,15 @@
-# Global for storing all the datas
+# Global for storing all the datas...
+
 all_requisitions = []
 approved_list = []
 pending_list = []
 not_approved_list = []
 
+
 class SimpleRequisition:
     requisition_number = 20000
-
-    # this make a new form and give requisition number
+    
+   # this make a new form and give requisition number
     def __init__(self):
         SimpleRequisition.requisition_number += 1
         self.req_id = SimpleRequisition.requisition_number
@@ -19,12 +21,14 @@ class SimpleRequisition:
         self.status = "pending"
         self.approval_ref = "not yet"
 
-    # ask staff for name, date and id
+    # ask staff for name, date and ids
+
     def get_staff_details(self):
         print("\n Staff Information ")
         self.date = input("Give date (DD/MM/YYYY): ")
         self.staff_name = input("Whats your name?: ")
         self.staff_id = input("Staff ID please: ")
+        
 
     # adding items and price one by one
     def add_items(self):
@@ -41,17 +45,18 @@ class SimpleRequisition:
                 print("Price is not write. Try again")
         print("All item done. Total is: $", self.total)
 
-    # check if auto approved or need manager
+    
+    # check if auto approved or need manager..
     def check_approval(self):
         if self.total < 500:
             self.status = "Approved"
             self.approval_ref = self.staff_id + str(self.req_id)[-3:]
             approved_list.append(self)
-        else:
+        else:  
             self.status = "pending"
             pending_list.append(self)
 
-    # if pending, manager can approve or not...
+    # if pending, manager can approve or not... 
     def manager_decision(self):
         if self.status == "pending":
             print("\nThis Requisition is still pending")
@@ -69,8 +74,10 @@ class SimpleRequisition:
                 not_approved_list.append(self)
             else:
                 print("Skip this for now.")
+                
 
-    # show all details of one form
+    # show all details of one forms
+    
     def show_details(self):
         print("\nPrinting Requisitions:")
         print(f"DATE: {self.date}")
@@ -82,7 +89,7 @@ class SimpleRequisition:
         print(f"Approval Reference Number: {self.approval_ref}")
 
 
-# Function to show total stats..
+# Function to show total stats...
 def show_statistics():
     print("\n Show Summary ")
     print("All requisitions done:", len(all_requisitions))
@@ -102,6 +109,6 @@ while True:
     again = input("\nDo new requisition? (yes / no): ").lower()
     if again != "yes":
         break
-
-# END show stats
+        
+# END show stats  
 show_statistics()
