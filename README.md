@@ -11,70 +11,67 @@
 ## GitHub Repository
 [GitHub Link](https://github.com/amitsharma000/IT5016_Assignment3_20250203)
 
----
 
 ## Project Overview
 
-This project is a simple, console-based Student Record Manager written in Python. The application allows users to add, list, and remove student records. It is designed using core object-oriented principles and follows software design best practices, making it clean, readable, and extensible.
+This Python application serves as a simple data collection system for staff entries along with purchase-request administration based on total monetary value.
+The system requests staff members to provide their name and identify while recording their requested items.
+The system calculates complete item prices after which automatic approval happens if the total stays under $500 otherwise manager approval takes effect. 
+A unique ID number assigns to every requisition for effective organization.
+A computer program developed through basic programming elements while incorporating some class material about software principles.
 
----
 
 ## Software Design Principles Analysis
 
-### 1. Single Responsibility Principle (SRP)
+### 1. KISS (Keep It Simple, Stupid)
 
-This principle is well observed in the application. The `Student` class has the sole responsibility of encapsulating student data, such as name and ID. The `StudentRecordManager` class handles all the operations related to managing the list of student records, including adding, displaying, and deleting entries. By assigning each class a distinct role, the code becomes easier to manage and modify, as changes in one responsibility area won’t impact others.
-
-> Each class has one clear reason to change.
-
----
+I avoided developing complex or showy code for this task. 
+The program only performed essential operations which included get_staff_details(), add_items(), check_approval() and show_details().
+The functions perform only the tasks their names indicate.
+The programming remained straightforward and it enabled both testing and understanding.
+The document follows a straightforward presentation alongside basic printouts that anyone can easily understand.
 
 ### 2. Open/Closed Principle (OCP)
 
-The current design is not fully compliant with OCP, as new features like search or export require modifications to existing methods in `StudentRecordManager`. To better align with OCP, future improvements could include implementing abstract base classes or introducing design patterns like Strategy or Factory. These patterns allow functionality to be extended without altering existing code, improving scalability.
+I designed this project with future expansion in mind because different features can be added without impacting the existing operational framework.
+Since the system welcomes new elements while maintaining its current operational effectiveness it remains open to change.
 
->  Feature extensions currently require code modifications — room for improvement.
-
----
 
 ### 3. DRY (Don't Repeat Yourself)
 
-The code maintains DRY by using reusable class methods and avoiding redundant logic. Operations such as record addition and listing are centralized in methods that can be reused multiple times without rewriting logic. This approach enhances maintainability and ensures consistency across the application.
+The code maintains DRY by using reusable class methods and avoiding redundant logic. 
+Operations such as record addition and listing are centralized in methods that can be reused multiple times without rewriting logic.
+This approach enhances maintainability and ensures consistency across the application.
 
->  Repetition is minimized through object-oriented design.
 
----
+### 4. YAGNI (You Aren’t Gonna Need It)
 
-### 4. KISS (Keep It Simple, Stupid)
+The code written strictly follows the YAGNI principle by including only functionality required to meet the project objectives also there are no unnecessary features like database storage, GUI components, or advanced filtering. This helps keep the project lightweight and focused.
 
-This application keeps things simple and straightforward. It avoids unnecessary abstractions and does not overcomplicate logic. Classes and methods are short, purpose-driven, and easy to understand. This simplicity is especially beneficial in academic and early-stage project development, where readability and clarity are key.
+### 5. Composition Over Inheritance
 
->  Clean, readable code that’s easy to follow.
+Since this system contains only a single class I have excluded inheritance from my design but developed functions which require output results from preceding operations.
+The system collects staff information before it moves on to item addition before processing approval with that accumulated total value. Each function depends on the preceding one which results in a smooth process flow.
 
----
+### 6. Separation of Concerns in the coding 
 
-### 5. YAGNI (You Aren’t Gonna Need It)
+I carried out the separation of each code segment. 
+The different program tasks run separately as distinct functions handle input gathering, calculation execution and status evaluation together with result printing. 
+The program structure facilitates easy management together with protection from interferences between different program sections.
 
-The code strictly follows the YAGNI principle by including only the functionality required to meet the project objectives. There are no unnecessary features like database storage, GUI components, or advanced filtering. This helps keep the project lightweight and focused.
+### 7. Easy to Understand the Code
 
->  No bloated features — only essential functionality is implemented.
+From my perspective computer code should adopt a design that makes it accessible to every reader. 
+I refused to use complex techniques and chose straightforward programming style. The names of variables and functions remain straightforward by describing their actions.
+Some comments together with section titles enhance the overall look of the code. 
 
----
 
 ## Summary
 
-The Student Record Manager showcases effective use of software design principles. It is minimal, well-structured, and designed for clarity and maintainability. While the current version is basic, it lays a solid foundation for further development and feature enhancements.
+I developed this program during a small assessment task as its primary author.
+I worked to maintain clean code writing while making it simple for teachers to execute the program.
+The software principles enabled me to divide the system into smaller components during design and better arrange the written program.The process of development helped me learn many things and future improvements are possible for any needed updates.
 
----
-
-## Future Improvements
-
-- Add persistent storage using JSON or SQLite.
-- Implement search and update functionality.
-- Introduce input validation and error handling.
-- Apply design patterns (e.g., Strategy) for better extensibility.
-
----
 
 ## Author
 
