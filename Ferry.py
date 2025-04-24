@@ -3,7 +3,7 @@
 all_requisitions = []
 approved_list = []
 pending_list = []
-not_approved_list = []
+not_approved_list = [] 
 
 
 class SimpleRequisition:
@@ -14,7 +14,7 @@ class SimpleRequisition:
         SimpleRequisition.requisition_number += 1
         self.req_id = SimpleRequisition.requisition_number
         self.date = ""
-        self.staff_name = ""
+        self.staff_name = "" 
         self.staff_id = ""
         self.items = {}
         self.total = 0
@@ -36,7 +36,7 @@ class SimpleRequisition:
         while True:
             item_name = input("Item name (type 'done' to stop): ")
             if item_name.lower() == "done":
-                break
+                break      
             try:
                 item_price = float(input("Price of item: $"))
                 self.items[item_name] = item_price
@@ -49,7 +49,7 @@ class SimpleRequisition:
     # check if auto approved or need manager..
     def check_approval(self):
         if self.total < 500:
-            self.status = "Approved"
+            self.status = "Approved"    
             self.approval_ref = self.staff_id + str(self.req_id)[-3:]
             approved_list.append(self)
         else:  
@@ -62,12 +62,12 @@ class SimpleRequisition:
             print("\nThis Requisition is still pending")
             print(f"Staff: {self.staff_name}, Total: ${self.total}")
             decision = input("Manager choice (approve / not approve / skip): ").lower()
-            if decision == "approve":
+            if decision == "approve":    
                 self.status = "Approved"
                 self.approval_ref = self.staff_id + str(self.req_id)[-3:]
                 pending_list.remove(self)
                 approved_list.append(self)
-            elif decision == "not approve":
+            elif decision == "not approve":   
                 self.status = "Not Approved"
                 self.approval_ref = "Not available"
                 pending_list.remove(self)
@@ -81,10 +81,10 @@ class SimpleRequisition:
     def show_details(self):
         print("\nPrinting Requisitions:")
         print(f"DATE: {self.date}")
-        print(f"Requisition: {self.req_id}")
+        print(f"Requisition: {self.req_id}")  
         print(f"Staff ID: {self.staff_id}")
         print(f"Staff Name: {self.staff_name}")
-        print(f"Total: ${self.total}")
+        print(f"Total: ${self.total}")   
         print(f"Status: {self.status}")
         print(f"Approval Reference Number: {self.approval_ref}")
 
